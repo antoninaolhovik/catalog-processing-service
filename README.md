@@ -5,7 +5,6 @@ catalog files (JSON or CSV), parses and validates them, saves the products to a 
 to `processed/` or `failed/`.
 
 - Task description: [docs/TASK.md](docs/TASK.md)
-- Mentor guide (how to share steps with a student): [docs/MENTORING.md](docs/MENTORING.md)
 
 ## Steps (git tags)
 

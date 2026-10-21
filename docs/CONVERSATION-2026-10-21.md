@@ -108,6 +108,7 @@ out. The build script is in the session folder (`files/build-repo.sh`).
   the initial commit + `docs/TASK.md`.
 - Done: Step 1 completed on `step-1` (Docker Compose PostgreSQL, Testcontainers, Lombok annotation processor,
   README run section). Branch `develop` was created from `step-1`. Tag `step-0-skeleton` was deleted.
+- Done: `docs/MENTORING.md` was removed.
 - Optional: rename the Java package and artifact (`com.ymidianyi.marketplace...`) in the student template.
 - Optional: write reference implementations for Steps 9 and 10.
 - Optional: copy `docs/TASK.md` into a new Google Doc.
