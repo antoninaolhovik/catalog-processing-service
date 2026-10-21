@@ -5,13 +5,13 @@
 | Repo | Visibility | Content |
 |---|---|---|
 | `catalog-processing-service` (this repo) | **private** (mentor only) | full reference history, branch `step-1`, tags `step-N` (N ≠ 1) |
-| `catalog-processing-service-task` | public or shared with the student, marked as a **GitHub template** | `step-0-skeleton` + `docs/TASK.md` only |
+| `catalog-processing-service-task` | public or shared with the student, marked as a **GitHub template** | the initial Spring Initializr commit + `docs/TASK.md` only |
 
 Publish the task repo from this one:
 
 ```bash
-git switch -c task-template step-0-skeleton
-git checkout main -- docs/TASK.md
+git switch -c task-template $(git rev-list --max-parents=0 step-1)
+git checkout step-1 -- docs/TASK.md
 git commit -m "Add task description"
 git push <task-remote> task-template:main
 git switch main && git branch -D task-template
@@ -31,7 +31,7 @@ the solutions of the next steps, and every student has a clean, separate history
    Steps 9 and 10 have no reference code yet. The best student solution can become the reference.
 5. **If the student is stuck** or far behind, give them the reference state of the previous step as a
    starting point: `git archive step-N | tar -x -C <student-repo>` or a patch made with
-   `git format-patch step-(N-1)..step-N`. For Step 1 use `git format-patch step-0-skeleton..step-1`; for Step 2
+   `git format-patch step-(N-1)..step-N`. For Step 1 use `git format-patch --root step-1`; for Step 2
    use `git diff step-1 step-2` (the `step-1` branch is not an ancestor of `step-2`).
 
 ## Tips

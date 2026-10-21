@@ -101,11 +101,13 @@ out. The build script is in the session folder (`files/build-repo.sh`).
 
 - Push the repo: create the GitHub repo(s), then `git remote add origin ...`, `git push -u origin main --tags`.
   Push `student-start` to the template repo.
-- Done: tag `step-1` was dropped and replaced by branch `step-1`, one squashed commit on `step-0-skeleton`
+- Done: tag `step-1` was dropped and replaced by branch `step-1`, one squashed commit on the initial commit `cd7aca2`
   (original step-1 commits + `2b4847d`, `24d9e32`, `5e17264`, the Lombok `provided` scope from `6173995`, and a fix
   for the `spring.application.name` typo). `mvn test` passes.
 - Done: branch `student-start` was deleted. `docs/MENTORING.md` now describes how to build the template from
-  `step-0-skeleton` + `docs/TASK.md`.
+  the initial commit + `docs/TASK.md`.
+- Done: Step 1 completed on `step-1` (Docker Compose PostgreSQL, Testcontainers, Lombok annotation processor,
+  README run section). Branch `develop` was created from `step-1`. Tag `step-0-skeleton` was deleted.
 - Optional: rename the Java package and artifact (`com.ymidianyi.marketplace...`) in the student template.
-- Optional: write reference implementations for the Docker/PostgreSQL part of Step 1 and for Steps 9 and 10.
+- Optional: write reference implementations for Steps 9 and 10.
 - Optional: copy `docs/TASK.md` into a new Google Doc.

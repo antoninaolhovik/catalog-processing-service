@@ -11,8 +11,7 @@ to `processed/` or `failed/`.
 
 | Tag | Step | Main topics |
 |---|---|---|
-| `step-0-skeleton` | Spring Initializr skeleton | – |
-| `step-1` (branch) | Environment & configuration | `@ConfigurationProperties`, `@PostConstruct` |
+| `step-1` (branch) | Environment & configuration | `@ConfigurationProperties`, `@PostConstruct`, Docker Compose PostgreSQL, Testcontainers |
 | `step-2` | Modeling & data mapping | records, JPA entities, Jackson JSON/CSV config, `@Qualifier` |
 | `step-3` | Parsing layer | Strategy, Factory/Resolver, `List<>` injection |
 | `step-4` | File scanner & mover | `java.nio.file` |
@@ -25,7 +24,7 @@ to `processed/` or `failed/`.
 
 The diff for any step: `git diff step-3 step-4`.
 
-Step 1 is a **branch**, not a tag: one squashed commit on top of `step-0-skeleton`. It includes the Step 1
+Step 1 is a **branch**, not a tag, built on the initial Spring Initializr commit. It includes the Step 1
 fixes that originally came with the first `step-2` commits (relative paths, SLF4J logging, Lombok `provided`
 scope), so `./mvnw test` passes. The branch is not an ancestor of `step-2`, so `git diff step-1 step-2` works,
 but commit ranges such as `step-1..step-2` also list the original Step 1 commits.
