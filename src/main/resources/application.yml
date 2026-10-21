@@ -1,12 +1,19 @@
 spring:
   application:
     name: marketplace-product-parser
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/catalog}
+    username: ${DB_USER:catalog}
+    password: ${DB_PASSWORD:catalog}
+  jpa:
+    hibernate:
+      ddl-auto: update # temporary, Step 9 switches to validate + Flyway
+    open-in-view: false
 
 file-processing:
   input-dir: "data/input-folder"
   processed-dir: "data/processed-folder"
   failed-dir: "data/failed-folder"
-  cron: "* */5 * * * *"
+  cron: "0 */5 * * * *"
   thread-pool-size: 10
   max-export-age-days: 30
-

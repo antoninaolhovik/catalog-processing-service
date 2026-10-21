@@ -1,10 +1,13 @@
 package com.ymidianyi.marketplace.product.parser.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import jakarta.annotation.PostConstruct;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -12,13 +15,20 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Getter
 @Setter
+@Validated
 @ConfigurationProperties(prefix = "file-processing")
 public class FileProcessingProperties {
+    @NotBlank
     private String inputDir;
+    @NotBlank
     private String processedDir;
+    @NotBlank
     private String failedDir;
+    @NotBlank
     private String cron;
+    @Positive
     private int threadPoolSize;
+    @Positive
     private int maxExportAgeDays;
 
     @PostConstruct

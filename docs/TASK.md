@@ -147,9 +147,10 @@ startup, validate the configuration, log it, and create the working directories.
 - The application starts against PostgreSQL without errors, creates the directories, and logs the properties.
 - `./mvnw test` (the context-loads test) passes.
 
-> The reference branch `step-1` still uses H2 because it was written before this requirement. The Docker and PostgreSQL
-> part is new work for the student. The branch is one squashed commit that already includes the fixes from the first
-> `step-2` commits (relative paths, SLF4J logging, Lombok scope), so `contextLoads` passes.
+> The reference branch `step-1` covers the whole step: Docker Compose PostgreSQL, Testcontainers, and the fixes
+> from the first original `step-2` commits (relative paths, SLF4J logging, Lombok scope).
+> Tip: if the JVM timezone is a legacy alias such as `Europe/Kiev`, PostgreSQL rejects the connection
+> (`invalid value for parameter "TimeZone"`). Run the JVM with `-Duser.timezone=UTC`.
 
 ## Step 2. Modeling and data mapping
 
