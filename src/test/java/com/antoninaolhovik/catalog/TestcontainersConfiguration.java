@@ -1,4 +1,4 @@
-package com.ymidianyi.marketplace.product.parser;
+package com.antoninaolhovik.catalog;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;

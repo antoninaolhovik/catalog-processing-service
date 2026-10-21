@@ -1,4 +1,4 @@
-package com.ymidianyi.marketplace.product.parser.config;
+package com.antoninaolhovik.catalog.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.validation.annotation.Validated;

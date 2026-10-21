@@ -2,7 +2,7 @@ spring:
   profiles:
     active: test
   application:
-    name: marketplace-product-parser-test
+    name: catalog-processing-service-test
   jpa:
     hibernate:
       ddl-auto: create-drop
