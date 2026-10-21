@@ -34,3 +34,4 @@ build/
 
 ### App data ###
 data/
+docs/CONVERSATION-*.md
