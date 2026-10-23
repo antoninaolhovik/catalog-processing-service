@@ -21,7 +21,6 @@ to `processed/` or `failed/`.
 | – | Step 9: DB structure (Flyway) | described in TASK.md, no reference code yet |
 | – | Step 10: Transactions | described in TASK.md, no reference code yet |
 
-The diff for any step: `git diff step-3 step-4`.
 
 Step 1 is a **branch**, not a tag, built on the initial Spring Initializr commit. It includes the Step 1
 fixes that originally came with the first `step-2` commits (relative paths, SLF4J logging, Lombok `provided`

@@ -2,9 +2,11 @@ package com.antoninaolhovik.catalog.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.validation.annotation.Validated;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
@@ -32,20 +34,15 @@ public class FileProcessingProperties {
     private int maxExportAgeDays;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         try {
             Files.createDirectories(Path.of(inputDir));
             Files.createDirectories(Path.of(processedDir));
             Files.createDirectories(Path.of(failedDir));
+        } catch (IOException e) {
+            throw new IllegalStateException("Could not create working directories", e);
         }
-        catch (IOException e){
-            log.error(String.valueOf(e));
-        }
-        if(Files.notExists(Path.of(processedDir)) || Files.notExists(Path.of(failedDir)) || Files.notExists(Path.of(inputDir))){
-            log.error("Initial folders were not created during startup");
-            throw new RuntimeException("Initial folders were not created during startup");
-        }
-        log.info("inputDir - {}, processedDir - {}, failedDir - {}, cron - {}, threadPoolSize- {}, maxExportAgeDays - {}",
+        log.info("inputDir - {}, processedDir - {}, failedDir - {}, cron - {}, threadPoolSize - {}, maxExportAgeDays - {}",
                 inputDir, processedDir, failedDir, cron, threadPoolSize, maxExportAgeDays);
     }
 }

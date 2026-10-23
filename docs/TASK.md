@@ -145,12 +145,7 @@ startup, validate the configuration, log it, and create the working directories.
 **Done when**
 - `docker compose up -d` starts PostgreSQL and its health check reports healthy.
 - The application starts against PostgreSQL without errors, creates the directories, and logs the properties.
-- `./mvnw test` (the context-loads test) passes.
-
-> The reference branch `step-1` covers the whole step: Docker Compose PostgreSQL, Testcontainers, and the fixes
-> from the first original `step-2` commits (relative paths, SLF4J logging, Lombok scope).
-> Tip: if the JVM timezone is a legacy alias such as `Europe/Kiev`, PostgreSQL rejects the connection
-> (`invalid value for parameter "TimeZone"`). Run the JVM with `-Duser.timezone=UTC`.
+- `./mvn test` (the context-loads test) passes.
 
 ## Step 2. Modeling and data mapping
 
