@@ -1,0 +1,27 @@
+package com.antoninaolhovik.catalog.config;
+
+import org.springframework.boot.jackson.autoconfigure.JsonMapperBuilderCustomizer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.cfg.MapperBuilder;
+import tools.jackson.dataformat.csv.CsvMapper;
+import tools.jackson.dataformat.csv.CsvReadFeature;
+
+@Configuration
+public class JacksonConfig {
+
+    @Bean
+    public JsonMapperBuilderCustomizer jsonCustomizer() {
+        return MapperBuilder::findAndAddModules;
+    }
+
+    @Bean("csvObjectMapper")
+    public ObjectMapper csvObjectMapper() {
+        return CsvMapper.builder()
+                .findAndAddModules()
+                .enable(CsvReadFeature.EMPTY_STRING_AS_NULL)
+                .build();
+    }
+}
